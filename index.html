@@ -32,7 +32,7 @@
     }
 
     *{ box-sizing: border-box; }
-    html,body{ height:100%; width:100%; margin:0; padding:0; overflow:hidden; font-family: 'Roboto', sans-serif; background: #d1d7db; display:flex; align-items:center; justify-content:center; }
+    html,body{ min-height:100%; width:100%; margin:0; padding:0; overflow-x:hidden; font-family: 'Roboto', sans-serif; background: #d1d7db; display:flex; align-items:stretch; justify-content:flex-start; }
 
     ::-webkit-scrollbar{ width:10px; height:10px; }
     ::-webkit-scrollbar-thumb{ background: rgba(0,0,0,0.15); border-radius:8px; }
@@ -114,17 +114,26 @@
 
     /* Mobile Optimizations */
     @media (max-width: 768px) {
-      #app-container {
-        border-radius: 0;
-        max-height: 100vh;
-        height: 100vh;
-        box-shadow: none;
+      html, body {
+        min-height:100%;
+        width:100%;
+        overflow-x:hidden;
+        overflow-y:auto;
+        display:block;
+        background: #d1d7db;
       }
 
-      html, body {
-        height: 100vh;
-        overflow: hidden;
+      #app-container {
+        width:100vw;
+        max-width:none;
+        min-height:100vh;
+        max-height:none;
+        height:100vh;
+        border-radius:0;
+        box-shadow:none;
       }
+
+      .view { min-height:100%; }
 
       .main-header {
         padding: 8px 12px;
