@@ -1,4 +1,4 @@
-const CACHE_NAME = 'codewithsaad-v1';
+const CACHE_NAME = 'codewithsaad-v2';
 const urlsToCache = [
   './',
   './index.html',
